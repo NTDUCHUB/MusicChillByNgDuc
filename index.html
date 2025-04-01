@@ -38,7 +38,7 @@
     function wussunplay() {
         audio.play()
     }
-    document.addEventListener("click",wussunplay()), audio.addEventListener("ended", function() {
+    document.addEventListener("no click",wussunplay()), audio.addEventListener("ended", function() {
         rand = (rand + 1) % Wussun_Music.length, audio.src = Wussun_Music[rand], audio.play()
     });
      </script>
