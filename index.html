@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Phát Nhạc</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        audio {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chào mừng đến với Website Phát Nhạc!</h1>
+    <p>Nhấn nút play để nghe nhạc.</p>
+
+    <!-- Phần tử audio để phát nhạc -->
+    <audio controls>
+        <source src="https://files.catbox.moe/2lkkru.mp4" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+ <script>
+    const Wussun_Music = ["https://files.catbox.moe/2lkkru.mp4", ];
+    let rand = Math.floor(Math.random() * Wussun_Music.length);
+    const audio = new Audio(Wussun_Music[rand]);
+    function wussunplay() {
+        audio.play()
+    }
+    document.addEventListener("click",wussunplay()), audio.addEventListener("ended", function() {
+        rand = (rand + 1) % Wussun_Music.length, audio.src = Wussun_Music[rand], audio.play()
+    });
+     </script>
+</body>
+</html>
