@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuyết Rơi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #282c34;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // Hàm tạo tuyết rơi
+        function createSnowflakes() {
+            var numSnowflakes = 50;  // Số lượng tuyết rơi
+
+            for (var i = 0; i < numSnowflakes; i++) {
+                var snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.style.left = Math.random() * window.innerWidth + 'px';  // Vị trí tuyết rơi theo chiều ngang
+                snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Thời gian rơi ngẫu nhiên
+                snowflake.style.animationDelay = Math.random() * 5 + 's';  // Thời gian trễ ngẫu nhiên
+
+                // Thêm tuyết vào body
+                document.body.appendChild(snowflake);
+            }
+        }
+
+        // Gọi hàm tạo tuyết
+        createSnowflakes();
+    </script>
+
+</body>
+</html>
